@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { createExam, getExams, updateExam, deleteExam } = require("../controllers/examController");
+const { createExam, getExams, updateExam, deleteExam } = require("../controller/examController");
 const isAdmin = require("../middleware/isAdmin");
 const authenticateJWT = require("../middleware/secureRoute"); 
 

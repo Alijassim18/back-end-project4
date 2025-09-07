@@ -3,6 +3,10 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv").config();
+const loginRouter=require("./routes/authRoutes");
+const examRouter=require("./routes/examRoutes")
+const submRouter=require('./routes/submRoutes');
+const superRouter=require('./routes/superRoutes')
 
 const app = express();
 
