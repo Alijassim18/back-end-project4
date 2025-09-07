@@ -18,6 +18,12 @@ app.use(cors({ origin: "http://localhost:5173" }));
 app.use(morgan("dev"));
 app.use(express.json());
 
+
+app.use("/auth",loginRouter);
+app.use("/exam",examRouter);
+app.use("/super",superRouter)
+app.use("/student",submRouter)
+
 app.use((req, res) => {
   res.status(404).json("Route not found 404");
 });

@@ -1,11 +1,10 @@
-const express = require("express")
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
-{
-login
-} = require("../controller/auth")  
+// Correct import using destructuring
+const { login } = require("../controller/auth");
 
-router.post("/login", login)
+// Login route
+router.post("/login", login);
 
-
-module.exports = router
+module.exports = router;
