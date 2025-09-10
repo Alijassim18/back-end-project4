@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const { createExam, getExams, updateExam, deleteExam } = require("../controller/exam");
-const isAdmin = require("../middleware/isAdmin");
-const authenticateJWT = require("../middleware/secureRoute"); 
+const { createExam, getExams, updateExam, deleteExam ,showExam} = require("../controller/exam");
 
-router.post("/", authenticateJWT, isAdmin, createExam);
-router.put("/:id", authenticateJWT, isAdmin, updateExam);
-router.delete("/:id", authenticateJWT, isAdmin, deleteExam);
-router.get("/", authenticateJWT, getExams);
+
+router.post("/new",  createExam);
+router.put("/:id", updateExam);
+router.delete("/:id",  deleteExam);
+router.get("/",  getExams);
+router.get("/:id",  showExam);
 
 module.exports = router;

@@ -14,6 +14,5 @@ const ExamSubmissionSchema = new mongoose.Schema({
   totalScore: { type: Number, default: 0 },
 });
 
-const ExamSubmission = mongoose.model("Submission", ExamSubmissionSchema);
-
-module.exports =ExamSubmission
+const ExamSubmission = mongoose.model("ExamSubmission", ExamSubmissionSchema);
+module.exports = ExamSubmission;

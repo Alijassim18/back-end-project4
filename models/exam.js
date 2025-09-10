@@ -18,12 +18,13 @@ const ExamSchema = new mongoose.Schema({
       text: { type: String, required: true },
       answer: { type: String, required: true },
       point: { type: Number, required: true },
+      options: { type: [String], default: [] }, 
     },
   ],
-  createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 });
-
 
 const Exam = mongoose.model("Exam", ExamSchema);
 
 module.exports = Exam;
+

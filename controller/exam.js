@@ -1,7 +1,7 @@
 const Exam=require("../models/exam")
 async function createExam(req, res) {
   try {
-    const exam = await Exam.create({ ...req.body, createdBy: req.user._id });
+    const exam = await Exam.create({ ...req.body});
     res.status(201).json(exam);
   } catch (err) {
     console.error("Error creating exam:", err);
@@ -41,4 +41,18 @@ async function deleteExam(req, res) {
   }
 }
 
-module.exports = { createExam, getExams, updateExam, deleteExam };
+async function showExam(req, res){
+    try {
+        const pet = await Exam.findById(req.params.id)
+        if (pet){
+            res.status(200).json(pet)
+        } else {
+            res.sendStatus(404)
+        }
+        
+    } catch (err) {
+        res.status(500).json({error: err.message})
+    }
+}
+
+module.exports = { createExam, getExams, updateExam, deleteExam,showExam };
